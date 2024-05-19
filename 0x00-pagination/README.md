@@ -1,1 +1,1 @@
-# Paginating dataset with simple page and page_size parammeters
+# Paginating dataset with simple page and page_size parammeter
