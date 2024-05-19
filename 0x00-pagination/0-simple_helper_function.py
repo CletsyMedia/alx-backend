@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 
-def index_range(page: int, page_size: int) -> tuple:
-    """
-    Returns a tuple of start and end indexes for a given page and page size.
-    """
-    start_index = (page - 1) * page_size
-    end_index = page * page_size
-    return start_index, end_index
+from typing import Tuple
 
 
-if __name__ == "__main__":
-    pass
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+    start index and an end index corresponding to the range of
+    """
+
+    return ((page - 1) * page_size, page_size * page)
