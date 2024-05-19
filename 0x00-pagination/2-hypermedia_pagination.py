@@ -20,7 +20,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     # if page is 1, start at 0 and end at page_size
     # if page is 2, start at ((page-1) * page_size) and
-    return ((page-1) * page_size, page_size * page)
+    return ((page - 1) * page_size, page_size * page)
 
 
 class Server:
@@ -44,8 +44,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """return the appropriate page of the dataset"""
-        assert type(page) is int and page > 0
-        assert type(page_size) is int and page_size > 0
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
 
         # get the data from the csv
         data = self.dataset()
@@ -60,8 +60,8 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """returns a dictionary containing the following key-value pairs
         """
-        assert type(page) is int and page > 0
-        assert type(page_size) is int and page_size > 0
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
 
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
@@ -70,7 +70,7 @@ class Server:
 
         # estimating the next page
         if (page < total_pages):
-            next_page = page+1
+            next_page = page + 1
         else:
             next_page = None
 
@@ -87,4 +87,3 @@ class Server:
                 'prev_page': prev_page,
                 'total_pages': total_pages
                 }
-
