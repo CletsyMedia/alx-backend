@@ -4,10 +4,9 @@
 """
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 
 
-@app.route('/')
 def index() -> str:
     """
     Index route: Renders index.html template
