@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-0-app module
+0-app module: A basic Flask app
 """
 from flask import Flask, render_template
 
@@ -8,9 +8,9 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index():
+def index() -> str:
     """
-    Index route
+    Index route: Renders index.html template
     """
     return render_template(
         '0-index.html',
